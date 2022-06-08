@@ -31,13 +31,13 @@ p {
   color: white;
 }
 
-.logo {
+/* .logo {
   width: 50px;
   fill: white;
   padding-right: 15px;
   display: inline-block;
   vertical-align: middle;
-}
+} */
 
 .inner-header {
   height: 65vh;
@@ -125,7 +125,11 @@ p {
 
 main div {
   text-align: center;
-  padding: 10px;
+  padding: 7px;
+  border: 2px solid rgb(101, 70, 225);
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 5px -5px 5px rgb(101, 70, 225);
 }
 
 main div a {
