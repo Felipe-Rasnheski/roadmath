@@ -44,7 +44,7 @@ p {
   height: 80vh;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 60px 0 0 0;
 }
 
 .flex {
@@ -122,4 +122,37 @@ p {
   h1 {
     font-size: 24px;
   }
+}
+
+.conta {
+  background:rgba(84, 58, 183, 1);
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  line-height: 45px;
+  border-radius: 15px;
+}
+
+.acao {
+  display: flex;
+  align-items: center;
+}
+
+.divisor {
+  line-height: 0;
+  position: relative;
+  top: -20px;
+}
+
+input {
+  width: 60%;
+  border-radius: 15px;
+  border: rgba(84, 58, 183, 1);
+  height: 50px;
+  margin-top: 5px;
+  font-size: 30px;
+  text-align: center;
 }
