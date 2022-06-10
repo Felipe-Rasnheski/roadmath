@@ -8,9 +8,17 @@
 
 body {
   margin: 0;
+  overflow-y: hidden;
 }
 
-h1, a {
+a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
@@ -31,16 +39,8 @@ p {
   color: white;
 }
 
-/* .logo {
-  width: 50px;
-  fill: white;
-  padding-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-} */
-
 .inner-header {
-  height: 65vh;
+  height: 80vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -64,15 +64,8 @@ p {
   max-height: 150px;
 }
 
-.content {
-  position: relative;
-  height: 20vh;
-  text-align: center;
-  background-color: white;
-}
 
 /* Animation */
-
 .parallax>use {
   animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
@@ -107,20 +100,28 @@ p {
   }
 }
 
+
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
+@media (max-width: 501px) {
   .waves {
-    height: 40px;
+    height: 15vh;
     min-height: 40px;
   }
 
-  .content {
-    height: 30vh;
+  h1, a {
+    font-size: 1.5rem;
   }
+}
 
-  h1 {
-    font-size: 24px;
-  }
+
+main {
+  margin-top: 30px;
+  height: 80vh;
+  overflow-y: scroll; 
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 main div {
@@ -128,12 +129,11 @@ main div {
   padding: 7px;
   border: 2px solid rgb(101, 70, 225);
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 15px 20px;
   box-shadow: 5px -5px 5px rgb(101, 70, 225);
 }
 
 main div a {
   text-decoration: none;
-  font-size: 2rem;
   color: white;
 }
