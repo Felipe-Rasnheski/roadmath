@@ -13,16 +13,32 @@ random2 = getRandomNumber();
 num1.textContent = random1;
 num2.textContent = random2;
 
+let answer = document.getElementById('resposta');
+
+answer.addEventListener("keyup", function(event) {
+
+  if (event.key === "Enter") {
+    // event.preventDefault();
+    // answer.click();
+    checkAnswer();
+  } else {
+    answer.classList.remove("respostaCerta");
+    answer.classList.remove("respostaErrada");
+  }
+});
+
 function checkAnswer() {
-  let answer = document.getElementById('resposta');
+
   let resposta = answer.value;
   resposta = parseFloat(resposta);
   respostaCerta = random1 + random2;
+
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
   } else if ( answer.value === ''){
-    
+    alert('digite a resposta')
   } else {
     answer.className = "respostaErrada";
   }
+  
 }
