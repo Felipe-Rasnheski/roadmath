@@ -18,9 +18,11 @@ function checkAnswer() {
   let resposta = answer.value;
   resposta = parseFloat(resposta);
   respostaCerta = random1 + random2;
-  console.log(respostaCerta)
-  console.log(answer)
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
+  } else if ( answer.value === ''){
+    
+  } else {
+    answer.className = "respostaErrada";
   }
 }
