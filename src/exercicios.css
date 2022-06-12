@@ -38,13 +38,6 @@ p {
   padding: 60px 0 0 0;
 }
 
-.flex {
-  /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 .waves {
   position: relative;
@@ -119,7 +112,7 @@ p {
   background:rgba(84, 58, 183, 1);
   width: 60%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 30px 38px 30px 22px;
   display: flex;
   justify-content: center;
   font-size: 50px;
@@ -143,7 +136,32 @@ input {
   border-radius: 15px;
   border: rgba(84, 58, 183, 1);
   height: 50px;
-  margin-top: 5px;
   font-size: 30px;
   text-align: center;
+  display: flex;
+  margin: 5px auto;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.respostaCerta {
+  border: 3px solid green;
+}
+
+button {
+  width: 80px;
+  padding: 9px;
+  font-weight: bold;
+  float: right;
+  margin-right: 20%;
+  border-radius: 10px;
+  border: none;
+  background:rgba(84, 58, 183);
+  color: rgb(255, 255, 255);
 }
