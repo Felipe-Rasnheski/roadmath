@@ -1,16 +1,16 @@
-let num1 = document.getElementById('num1');
 let num2 = document.getElementById('num2');
+let num1 = null; 
+let respostaCerta = null;
 
 function getRandomNumber() {
+  num1 = document.getElementById('num1');
   let max = parseFloat(num1.textContent);
-  number = Math.floor(Math.random() * (max - 10)) + 10;
-  return number
+  return Math.floor(Math.random() * (max - 10)) + 10; 
 }
 
-random1 = getRandomNumber();
-random2 = getRandomNumber();
-
+let random1 = getRandomNumber();
 num1.textContent = random1;
+let random2 = getRandomNumber();
 num2.textContent = random2;
 
 let answer = document.getElementById('resposta');
@@ -32,7 +32,6 @@ function checkAnswer() {
   let resposta = answer.value;
   resposta = parseFloat(resposta);
   respostaCerta = random1 + random2;
-
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
   } else if ( answer.value === ''){
