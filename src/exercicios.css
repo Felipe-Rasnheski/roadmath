@@ -151,7 +151,11 @@ input::-webkit-inner-spin-button {
 }
 
 .respostaCerta {
-  border: 3px solid green;
+  border: 3px solid rgb(31, 194, 31);
+}
+
+.respostaErrada {
+  border: 3px solid rgb(194, 31, 31);
 }
 
 button {
