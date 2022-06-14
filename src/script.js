@@ -1,17 +1,19 @@
 let num2 = document.getElementById('num2');
-let num1 = null; 
+let num1 = document.getElementById('num1'); 
 let respostaCerta = null;
+let random1 = null;
+let random2 = null;
 
-function getRandomNumber() {
-  num1 = document.getElementById('num1');
-  let max = parseFloat(num1.textContent);
-  return Math.floor(Math.random() * (max - 10)) + 10; 
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * (max - 10)) + 10;
 }
 
-let random1 = getRandomNumber();
-num1.textContent = random1;
-let random2 = getRandomNumber();
-num2.textContent = random2;
+function newRandomNunber() {
+  random1 = getRandomNumber(100);
+  num1.textContent = random1;
+  random2 = getRandomNumber(random1);
+  num2.textContent = random2;
+}
 
 let answer = document.getElementById('resposta');
 
@@ -41,3 +43,5 @@ function checkAnswer() {
   }
   
 }
+
+newRandomNunber()
