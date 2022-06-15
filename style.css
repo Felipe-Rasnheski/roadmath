@@ -127,10 +127,10 @@ main::-webkit-scrollbar {
 main div {
   text-align: center;
   padding: 7px;
-  border: 2px solid rgb(101, 70, 225);
+  border: 2px solid rgb(84, 58, 183, 1);
   border-radius: 10px;
   margin: 15px 20px;
-  box-shadow: 5px -5px 5px rgb(101, 70, 225);
+  box-shadow: 5px -5px 5px rgba(84, 58, 183, 1);
 }
 
 main div a {
