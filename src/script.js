@@ -4,18 +4,19 @@ let respostaCerta = null;
 let random1 = null;
 let random2 = null;
 
-function getRandomNumber(max) {
-  return Math.floor(Math.random() * (max - 10)) + 10;
+function getRandomNumber(max, min) {
+  return Math.floor(Math.random() * (max -min)) + min;
 }
 
-function newRandomNunber() {
-  random1 = getRandomNumber(100);
+function newRandomNumber() {
+  random1 = getRandomNumber(100, 30);
   num1.textContent = random1;
-  random2 = getRandomNumber(random1);
+  random2 = getRandomNumber(random1, 30);
   num2.textContent = random2;
 }
 
 let answer = document.getElementById('resposta');
+let answerVazia = answer;
 
 answer.addEventListener("keyup", function(event) {
 
@@ -36,6 +37,7 @@ function checkAnswer() {
   respostaCerta = random1 + random2;
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
+    newAnswer()
   } else if ( answer.value === ''){
     alert('digite a resposta')
   } else {
@@ -44,4 +46,11 @@ function checkAnswer() {
   
 }
 
-newRandomNunber()
+function newAnswer() {
+let newanswer = setTimeout(function() {
+  answer.classList.remove("respostaCerta");
+  answer.value = "";
+  newRandomNumber();
+}, 1000);
+}
+newRandomNumber()
