@@ -137,3 +137,22 @@ main div a {
   text-decoration: none;
   color: white;
 }
+
+header {
+  height: 40px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  padding: 5px;
+}
+
+header select {
+  height: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 10px;
+  background:rgba(84, 58, 183, 1);
+  color: rgb(255, 255, 255);
+  border: none;
+}
