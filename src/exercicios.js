@@ -5,10 +5,17 @@ let random1 = null;
 let random2 = null;
 let max = null;
 let min = null;
-let controle = 20;
 
 let nivel = window.location.search;
 nivel = nivel.replace("?", "");
+nivel = nivel.replace("+", "");
+
+let qtdPerguntas = nivel.split("").filter(n => (Number(n) || n == 0)).join("");
+
+qtdPerguntas = parseFloat(qtdPerguntas);
+let controle = qtdPerguntas/2;
+nivel = nivel.replace(qtdPerguntas,'');
+
 
 if(nivel === "facil") {
   max = 100;
@@ -30,10 +37,10 @@ function newRandomNumber() {
   num1.textContent = random1;
   random2 = getRandomNumber(random1, min);
   num2.textContent = random2;
-  if (controle <= 10 && controle > 0) {
+  if (qtdPerguntas <= controle && qtdPerguntas > 0) {
     let acao = document.getElementById('acao');
     acao.textContent = "-";
-  } else if (controle <= 0) {
+  } else if (qtdPerguntas <= 0) {
     window.location.href = "estatisticas.html";
   }
 }
@@ -56,11 +63,11 @@ answer.addEventListener("keyup", function(event) {
 function checkAnswer() {
   let resposta = answer.value;
   resposta = parseFloat(resposta);
-  respostaCerta = controle > 10 ? random1 + random2 : random1 - random2;
+  respostaCerta = qtdPerguntas > controle ? random1 + random2 : random1 - random2;
 
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
-    controle--
+    qtdPerguntas--
     newAnswer()
   } else if ( answer.value === ''){
     alert('digite a resposta')
