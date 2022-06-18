@@ -7,7 +7,6 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 body {
-  margin: 0;
   overflow-y: hidden;
 }
 
@@ -152,8 +151,10 @@ header select {
   font-weight: bold;
   font-size: 16px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   background:rgba(84, 58, 183, 1);
   color: rgb(255, 255, 255);
   border: none;
+  margin: 0 10px;
+  box-shadow: 5px -5px 5px rgba(84, 58, 183, 0.4);
 }
