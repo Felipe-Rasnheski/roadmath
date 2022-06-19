@@ -154,3 +154,8 @@ button {
   background:rgba(84, 58, 183);
   color: rgb(255, 255, 255);
 }
+
+#qtdPerguntas {
+  width: 80%;
+  margin: 5px;
+}
