@@ -42,7 +42,13 @@ function newRandomNumber() {
     let acao = document.getElementById('acao');
     acao.textContent = "-";
   } else if (qtdPerguntas <= 0) {
-    window.location.href = "estatisticas.html";
+    // if(minutos < 10){
+    //   minutos = "0" + minutos + ":" + segundos;
+    // } else {
+    //   minutos = minutos + ":" + segundos;
+    // }
+    // console.log(minutos)
+    window.location.href = "estatisticas.html?" + minutos + "?" + segundos;
   }
 }
 
@@ -88,3 +94,13 @@ let newanswer = setTimeout(function() {
 }
 
 newRandomNumber()
+
+let segundos = 0;
+let minutos = 0;
+let setTime = setInterval(() => {
+  segundos++
+  if(segundos === 60) {
+    segundos = 0;
+    minutos++ 
+  }
+},1000);
