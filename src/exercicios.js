@@ -15,7 +15,8 @@ let qtdPerguntas = nivel.split("").filter(n => (Number(n) || n == 0)).join("");
 qtdPerguntas = parseFloat(qtdPerguntas);
 let controle = qtdPerguntas/2;
 nivel = nivel.replace(qtdPerguntas,'');
-
+let perguntasQTD = document.querySelector("#qtdPerguntas h3 span");
+perguntasQTD.textContent = qtdPerguntas
 
 if(nivel === "facil") {
   max = 100;
@@ -68,6 +69,7 @@ function checkAnswer() {
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
     qtdPerguntas--
+    perguntasQTD.textContent = qtdPerguntas
     newAnswer()
   } else if ( answer.value === ''){
     alert('digite a resposta')
