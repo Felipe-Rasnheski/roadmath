@@ -1,8 +1,10 @@
 let tempo = document.getElementById('tempo');
+let melhorTempo = document.getElementById('melhorTempo');
 
-let search = window.location.search;
-search = search.replace("?", "")
-console.log(search)
-
+let search = window.location.search
+search = search.replace("?", "");
 tempo.innerText = search;
-let melhorTempo = null;
+
+function menu() {
+  window.location.href = "../index.html"
+}

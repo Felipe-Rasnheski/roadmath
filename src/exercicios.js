@@ -48,7 +48,7 @@ function newRandomNumber() {
     //   minutos = minutos + ":" + segundos;
     // }
     // console.log(minutos)
-    window.location.href = "estatisticas.html?" + minutos + "?" + segundos;
+    window.location.href = "estatisticas.html?" + minutos + ":" + segundos;
   }
 }
 
