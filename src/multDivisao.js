@@ -20,7 +20,7 @@ perguntasQTD.textContent = qtdPerguntas
 
 if(nivel === "facil") {
   max = 100;
-  min = 30;
+  min = 10;
 } else if (nivel === "normal") {
   max = 1000;
   min = 100;
@@ -40,7 +40,7 @@ function newRandomNumber() {
   num2.textContent = random2;
   if (qtdPerguntas <= controle && qtdPerguntas > 0) {
     let acao = document.getElementById('acao');
-    acao.textContent = "-";
+    acao.textContent = "÷";
   }
 }
 
@@ -62,7 +62,8 @@ answer.addEventListener("keyup", function(event) {
 function checkAnswer() {
   let resposta = answer.value;
   resposta = parseFloat(resposta);
-  respostaCerta = qtdPerguntas > controle ? random1 * random2 : random1 - random2;
+  respostaCerta = qtdPerguntas > controle ? random1 * random2 : random1 / random2;
+  console.log(respostaCerta)
 
   if (resposta === respostaCerta) {
     answer.className = "respostaCerta";
@@ -70,12 +71,6 @@ function checkAnswer() {
     perguntasQTD.textContent = qtdPerguntas
 
     if (qtdPerguntas <= 0) {
-    // if(minutos < 10){
-    //   minutos = "0" + minutos + ":" + segundos;
-    // } else {
-    //   minutos = minutos + ":" + segundos;
-    // }
-    // console.log(minutos)
     window.location.href = "estatisticas.html?" + minutos + ":" + segundos;
   }
     newAnswer()
