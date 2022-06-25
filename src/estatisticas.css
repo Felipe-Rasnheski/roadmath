@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-/* @import url(//fonts.googleapis.com/css?family=Lato:300:400); */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
 body {
@@ -17,13 +15,6 @@ h1,a {
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 28px;
-}
-
-p {
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-  font-size: 14px;
-  color: #333333;
 }
 
 .header {
@@ -52,7 +43,6 @@ p {
 }
 
 /* Animation */
-
 .parallax>use {
   animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
@@ -87,7 +77,7 @@ p {
   }
 }
 
-/*Shrinking for mobile*/
+/* Shrinking for mobile */
 @media (max-width: 500px) {
   .waves {
     height: 50px;
@@ -104,9 +94,9 @@ main {
   height: 50vh;
   margin: 0 auto;
   padding: 40px;
-  background: rgb(255, 255, 255);
+  /* background: rgb(255, 255, 255);
   color: rgb(97, 97, 213);
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 
 button {
@@ -116,12 +106,6 @@ button {
   font-weight: bold;
   padding: 5px 10px;
   color: rgb(97, 97, 213);
-  border: 1px solid rgb(97, 97, 213);
+  border: none;
   border-radius: 6px; 
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  font-weight: 300;
 }
