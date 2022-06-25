@@ -6,19 +6,11 @@
 
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-h1,
-a {
+h1,a {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
   font-size: 48px;
-}
-
-p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size: 14px;
-  color: #333333;
 }
 
 .header {
@@ -47,7 +39,6 @@ p {
 }
 
 /* Animation */
-
 .parallax>use {
   animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
