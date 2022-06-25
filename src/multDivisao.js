@@ -18,29 +18,80 @@ nivel = nivel.replace(qtdPerguntas,'');
 let perguntasQTD = document.querySelector("#qtdPerguntas h3 span");
 perguntasQTD.textContent = qtdPerguntas
 
-if(nivel === "facil") {
-  max = 100;
-  min = 10;
-} else if (nivel === "normal") {
-  max = 1000;
-  min = 100;
-} else {
-  max = 10000;
-  min = 1000;
-}
+// if(nivel === "facil") {
+//   max = 100;
+//   min = 10;
+// } else if (nivel === "normal") {
+//   max = 1000;
+//   min = 100;
+// } else {
+//   max = 10000;
+//   min = 1000;
+// }
+
+switch (nivel) {
+      case "facil":
+        max = 50;
+        min = 10
+        console.log("facil")
+        break;
+    
+      case "normal":
+        max = 100;
+        min = 20;
+        console.log("normal")
+        break;
+      
+      default:
+        max = 150;
+        min = 50;
+        console.log("dificil")
+        break;
+    }
 
 function getRandomNumber(max, min) {
-  return Math.floor(Math.random() * (max -min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function newRandomNumber() {
-  random1 = getRandomNumber(max, min);
-  num1.textContent = random1;
-  random2 = getRandomNumber(random1, min);
-  num2.textContent = random2;
-  if (qtdPerguntas <= controle && qtdPerguntas > 0) {
+
+  if (qtdPerguntas <= 10 && qtdPerguntas > 5){
+    random1 = getRandomNumber(max, min);
+    num1.textContent = random1;
+    random2 = getRandomNumber(random1, min);
+    num2.textContent = random2;
+  } else {
+    switch (nivel) {
+      case "facil":
+        max = 50;
+        min = 1
+        console.log("facil")
+        break;
+    
+      case "normal":
+        max = 100;
+        min = 20;
+        console.log("normal")
+        break;
+      
+      default:
+        max = 150;
+        min = 50;
+        console.log("dificil")
+        break;
+    }
+
+    random1 = getRandomNumber(max, min);
+    random2 = getRandomNumber(random1, min);
+    console.log(random1, random2)
+    let troca = random1 * random2;
+    
+    num1.textContent = troca;
+    num2.textContent = random1;
+
     let acao = document.getElementById('acao');
     acao.textContent = "÷";
+    console.log(`Esse é o dividendo ${troca} esse é o divisor ${random1} e esse a resposta ${random2}`)
   }
 }
 
@@ -62,7 +113,7 @@ answer.addEventListener("keyup", function(event) {
 function checkAnswer() {
   let resposta = answer.value;
   resposta = parseFloat(resposta);
-  respostaCerta = qtdPerguntas > controle ? random1 * random2 : random1 / random2;
+  respostaCerta = qtdPerguntas > controle ? random1 * random2 : random2;
   console.log(respostaCerta)
 
   if (resposta === respostaCerta) {
