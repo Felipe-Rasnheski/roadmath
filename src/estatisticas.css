@@ -6,10 +6,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
-body {
-  margin: 0;
-}
-
 h1,a {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -89,23 +85,15 @@ h1,a {
   }
 }
 
-main {
+#estatisticas {
   width: 80vw;
   height: 50vh;
   margin: 0 auto;
   padding: 40px;
-  /* background: rgb(255, 255, 255);
-  color: rgb(97, 97, 213);
-  border-radius: 10px; */
 }
 
-button {
-  display: block;  
-  margin: 10px auto;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 5px 10px;
-  color: rgb(97, 97, 213);
-  border: none;
-  border-radius: 6px; 
+a {
+  padding: 30px;
+  color: rgb(255, 255, 255);
+  display: block;
 }
