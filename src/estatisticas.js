@@ -4,7 +4,3 @@ let melhorTempo = document.getElementById('melhorTempo');
 let search = window.location.search
 search = search.replace("?", "");
 tempo.innerText = search;
-
-function menu() {
-  window.location.href = "../index.html"
-}
