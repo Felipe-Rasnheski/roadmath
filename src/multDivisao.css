@@ -17,14 +17,14 @@ h1,a {
   position: relative;
   text-align: center;
   background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .inner-header {
   height: 80vh;
-  width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 60px 0 0 0;
+  max-width: 600px;
 }
 
 

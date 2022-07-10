@@ -28,7 +28,7 @@ h1 {
   position: relative;
   text-align: center;
   background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .inner-header {
@@ -123,11 +123,12 @@ main div {
   border-radius: 10px;
   margin: 15px 20px;
   box-shadow: 5px -5px 5px rgba(84, 58, 183, 1);
+  background:rgba(84, 58, 183, 0.5);
 }
 
 main div a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
