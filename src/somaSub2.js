@@ -70,12 +70,6 @@ function checkAnswer() {
     perguntasQTD.textContent = qtdPerguntas
 
     if (qtdPerguntas <= 0) {
-    // if(minutos < 10){
-    //   minutos = "0" + minutos + ":" + segundos;
-    // } else {
-    //   minutos = minutos + ":" + segundos;
-    // }
-    // console.log(minutos)
     window.location.href = "estatisticas.html?" + minutos + ":" + segundos;
   }
     newAnswer()
