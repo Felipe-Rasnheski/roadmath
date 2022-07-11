@@ -105,7 +105,7 @@ p {
   border-radius: 15px;
 }
 
-.acao {
+#acao {
   display: flex;
   align-items: center;
 }
