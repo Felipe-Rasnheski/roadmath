@@ -1,16 +1,9 @@
 export default class Conta {
 
-  constructor(search) {
-    this.nivel = search.replace("?", "").replace("+", "")
-    this.qtdPergun = parseFloat(
-      this.nivel.split("").filter(n => (Number(n) || n == 0)).join("")
-    )
-    this.nivel = this.nivel.replace(this.qtdPergun, "")
-    this.controle = this.qtdPergun / 2
+  constructor(max, min) {
+    this.random1 = parseInt(Math.random() * (max - min)) + min
+    this.random2 = parseInt(Math.random() * (this.random1 - min)) + min
+    this.answer = this.random1 + this.random2
   }
 
-  randomNumber(max, min) {
-    return parseInt(Math.random() * (max - min) + min)
-  }
-  
 }
