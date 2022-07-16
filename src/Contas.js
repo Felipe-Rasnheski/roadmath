@@ -6,4 +6,10 @@ export default class Conta {
     this.answer = this.random1 + this.random2
   }
 
+  set answerRes(qtdPergun) {
+    if(qtdPergun <= 5) {
+      this.answer = this.random1 - this.random2
+    } else return
+  }
+
 }
