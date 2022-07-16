@@ -23,11 +23,31 @@ resposta.addEventListener("keydown", event => {
   } 
 })
 
+let answer = conta.answer
+
 function checkAnswer() {
-  
-  if(resposta.value == conta.answer) {
+
+  if(resposta.value == answer) {
+    resposta.classList.remove("respostaErrada")
     resposta.classList.add("respostaCerta")
+    search.qtdPergun--
+    qtdPerguntas.textContent = search.qtdPergun
+    newConta()
   } else {
     resposta.classList.add("respostaErrada")
   }
+
+}
+
+function newConta() {
+  
+  setTimeout(() => {
+    const newConta = new Conta(search.max, search.min)
+    answer = newConta.answer
+    resposta.value = ""
+    resposta.classList.remove("respostaCerta")
+    num1.textContent = newConta.random1
+    num2.textContent = newConta.random2
+  }, 1000)
+    
 }
