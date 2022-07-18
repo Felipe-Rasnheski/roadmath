@@ -4,151 +4,45 @@
   box-sizing: border-box;
 }
 
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
 body {
+  background: #f3f3f4;
   overflow-y: hidden;
 }
 
-a {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 2rem;
-}
-
-h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: 2px;
-  font-size: 48px;
-}
-
-.header {
-  position: relative;
-  text-align: center;
-  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-  color: rgb(255, 255, 255);
-}
-
-.inner-header {
-  height: 75vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.flex {
-  /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; 
-} 
-
-.waves {
-  position: relative;
-  width: 100%;
+header {
+  background: #0099ff;
   height: 50px;
-  margin-bottom: -7px;
-  /*Fix for safari gap*/
-  min-height: 50px;
-  max-height: 100px;
+  padding: 10px 20px;
 }
-
-
-/* Animation */
-.parallax>use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
-}
-
-.parallax>use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-
-.parallax>use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-
-.parallax>use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-
-.parallax>use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
-
-/*Shrinking for mobile*/
-@media (max-width: 501px) {
-  .waves {
-    height: 50px;
-    min-height: 50px;
-  }
-
-  h1, a {
-    font-size: 1.5rem;
-  }
-}
-
 
 main {
-  margin-top: 30px;
-  height: 75vh;
-  overflow-y: scroll; 
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 main::-webkit-scrollbar {
   display: none;
 }
 
-main div {
-  text-align: center;
-  padding: 7px;
-  border: 2px solid rgb(84, 58, 183, 1);
-  border-radius: 10px;
-  margin: 15px 20px;
-  box-shadow: 5px -5px 5px rgba(84, 58, 183, 1);
-  background:rgba(84, 58, 183, 0.5);
+a {
+  display: block;
+  padding: 12px;
 }
 
-main div a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+a:hover {
   cursor: pointer;
 }
 
-header {
-  height: 40px;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  padding: 5px;
+.waves {
+  background: url(./img/wave.png) no-repeat bottom center;
+  position: fixed;
+  bottom: -50px;
+  height: 200px;
+  width: 100%;
 }
 
-header select {
-  height: 30px;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 5px;
-  background:rgba(84, 58, 183, 1);
-  color: rgb(255, 255, 255);
-  border: none;
-  margin: 0 10px;
-  box-shadow: 5px -5px 5px rgba(84, 58, 183, 0.4);
-}
+/*Shrinking for mobile*/
+@media (max-width: 501px) {}
