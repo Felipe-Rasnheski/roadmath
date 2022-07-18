@@ -1,154 +1,75 @@
-let num2 = document.getElementById('num2');
-let num1 = document.getElementById('num1'); 
-let respostaCerta = null;
-let random1 = null;
-let random2 = null;
-let max = null;
-let min = null;
+import Conta from "./Contas.js"
+import Search from "./Search.js"
 
-let nivel = window.location.search;
-nivel = nivel.replace("?", "");
-nivel = nivel.replace("+", "");
+let num1 = document.getElementById("num1")
+let num2 = document.getElementById("num2")
 
-let qtdPerguntas = nivel.split("").filter(n => (Number(n) || n == 0)).join("");
+let search = new Search(window.location.search)
 
-qtdPerguntas = parseFloat(qtdPerguntas);
-let controle = qtdPerguntas/2;
-nivel = nivel.replace(qtdPerguntas,'');
-let perguntasQTD = document.querySelector("#qtdPerguntas h3 span");
-perguntasQTD.textContent = qtdPerguntas
+let qtdPerguntas = document.querySelector("span")
+qtdPerguntas.textContent = search.qtdPergun
 
-// if(nivel === "facil") {
-//   max = 100;
-//   min = 10;
-// } else if (nivel === "normal") {
-//   max = 1000;
-//   min = 100;
-// } else {
-//   max = 10000;
-//   min = 1000;
-// }
+let conta = new Conta(search.max, search.min, search.controle)
+num1.textContent = conta.random1
+num2.textContent = conta.random2
 
-switch (nivel) {
-      case "facil":
-        max = 50;
-        min = 10
-        console.log("facil")
-        break;
-    
-      case "normal":
-        max = 100;
-        min = 20;
-        console.log("normal")
-        break;
-      
-      default:
-        max = 150;
-        min = 50;
-        console.log("dificil")
-        break;
-    }
-
-function getRandomNumber(max, min) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function newRandomNumber() {
-
-  if (qtdPerguntas <= 10 && qtdPerguntas > 5){
-    random1 = getRandomNumber(max, min);
-    num1.textContent = random1;
-    random2 = getRandomNumber(random1, min);
-    num2.textContent = random2;
-  } else {
-    switch (nivel) {
-      case "facil":
-        max = 50;
-        min = 1
-        console.log("facil")
-        break;
-    
-      case "normal":
-        max = 100;
-        min = 20;
-        console.log("normal")
-        break;
-      
-      default:
-        max = 150;
-        min = 50;
-        console.log("dificil")
-        break;
-    }
-
-    random1 = getRandomNumber(max, min);
-    random2 = getRandomNumber(random1, min);
-    console.log(random1, random2)
-    let troca = random1 * random2;
-    
-    num1.textContent = troca;
-    num2.textContent = random1;
-
-    let acao = document.getElementById('acao');
-    acao.textContent = "÷";
-    console.log(`Esse é o dividendo ${troca} esse é o divisor ${random1} e esse a resposta ${random2}`)
+let resposta = document.getElementById("resposta")
+resposta.addEventListener("keydown", event => {
+  resposta.classList.remove("respostaErrada")
+  if(event.key == "Enter") {
+    checkAnswer()
   }
-}
+})
 
-let answer = document.getElementById('resposta');
-let answerVazia = answer;
-
-answer.addEventListener("keyup", function(event) {
-
-  if (event.key === "Enter") {
-    // event.preventDefault();
-    // answer.click();
-    checkAnswer();
-  } else {
-    answer.classList.remove("respostaCerta");
-    answer.classList.remove("respostaErrada");
-  }
-});
-
+let answer = conta.answer
 function checkAnswer() {
-  let resposta = answer.value;
-  resposta = parseFloat(resposta);
-  respostaCerta = qtdPerguntas > controle ? random1 * random2 : random2;
-  console.log(respostaCerta)
-
-  if (resposta === respostaCerta) {
-    answer.className = "respostaCerta";
-    qtdPerguntas--
-    perguntasQTD.textContent = qtdPerguntas
-
-    if (qtdPerguntas <= 0) {
-    window.location.href = "estatisticas.html?" + minutos + ":" + segundos;
-  }
-    newAnswer()
-  } else if ( answer.value === ''){
-    alert('digite a resposta')
+  if(resposta.value == answer) {
+    resposta.classList.remove("respostaErrada")
+    resposta.classList.add("respostaCerta")
+    search.qtdPergun--
+    qtdPerguntas.textContent = search.qtdPergun
+    newConta()
   } else {
-    answer.className = "respostaErrada";
+    resposta.classList.add("respostaErrada")
   }
-  
 }
 
-function newAnswer() {
-let newanswer = setTimeout(function() {
-  answer.classList.remove("respostaCerta");
-  answer.value = "";
-  newRandomNumber();
-}, 1000);
+function newConta() {
+  setTimeout(() => {
+    if(search.qtdPergun == 0) {
+      minutos < 10 ? minutos = "0" + minutos.toString() : minutos
+      segundos < 10 ? segundos = "0" + segundos.toString() : segundos
+      window.location.href = `estatisticas.html?${minutos}:${segundos}`
+    }
+    const newConta = new Conta(search.max, search.min, search.controle)
+    newConta.answerMult = search.qtdPergun
+    answer = newConta.answer
+    console.log(answer)
+    if(search.qtdPergun == search.controle) {
+      document.querySelector(".acao").innerHTML = "÷"
+    }
+    resposta.value = ""
+    resposta.classList.remove("respostaCerta")
+    if(search.qtdPergun > search.controle) {
+      num1.textContent = newConta.random1
+      num2.textContent = newConta.random2
+    } else {
+      num1.textContent = newConta.mult
+      num2.textContent = newConta.random1
+    }
+  }, 1000)
 }
 
-newRandomNumber()
+let proximaPergun = document.querySelector(".inner-header button")
+proximaPergun.addEventListener("click", () => checkAnswer())
 
-let segundos = 0;
-let minutos = 0;
-let setTime = setInterval(() => {
+let segundos = 0
+let minutos = 0
+setInterval(() => {
   segundos++
-  if(segundos === 60) {
-    segundos = 0;
-    minutos++ 
+  if (segundos > 60) {
+    minutos++
+    segundos = 0
   }
-},1000);
+}, 1000);
+console.log(answer)
