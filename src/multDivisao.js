@@ -44,7 +44,6 @@ function newConta() {
     const newConta = new Conta(search.max, search.min, search.controle)
     newConta.answerMult = search.qtdPergun
     answer = newConta.answer
-    console.log(answer)
     if(search.qtdPergun == search.controle) {
       document.querySelector(".acao").innerHTML = "÷"
     }
@@ -72,4 +71,3 @@ setInterval(() => {
     segundos = 0
   }
 }, 1000);
-console.log(answer)
