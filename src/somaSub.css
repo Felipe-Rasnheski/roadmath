@@ -14,13 +14,6 @@ a {
   font-size: 48px;
 }
 
-p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size: 14px;
-  color: #333333;
-}
-
 .header {
   position: relative;
   text-align: center;
@@ -35,7 +28,6 @@ p {
   max-width: 600px;
 }
 
-
 .waves {
   position: relative;
   width: 100%;
@@ -47,7 +39,6 @@ p {
 }
 
 /* Animation */
-
 .parallax>use {
   animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
@@ -106,7 +97,7 @@ p {
   border-radius: 15px;
 }
 
-#acao {
+.acao {
   display: flex;
   align-items: center;
 }
