@@ -11,13 +11,32 @@ body {
   overflow-y: hidden;
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 header {
   background: #0099ff;
-  height: 50px;
-  padding: 10px 20px;
   margin-bottom: 20px; 
+  padding: 0 50px;
+}
+
+select {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+}
+
+select:hover, select:focus {
+  outline: none;
+}
+
+option {
+  background: #0099ff;
 }
 
 main {
