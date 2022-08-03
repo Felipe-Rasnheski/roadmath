@@ -1,103 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-body {
-  background: #f3f3f4;
-  overflow-y: hidden;
+* {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem;
+  margin: 0;border: 0;padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
   text-transform: capitalize;
-  font-weight: bold;
-}
-
-header {
-  background: #0099ff;
-  margin-bottom: 20px; 
-  padding: 0 50px;
-}
-
-select {
-  background: none;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  padding: 10px 10px 10px 10px;
-}
-
-select:hover, select:focus {
-  outline: none;
-}
-
-option {
-  background: #0099ff;
-}
-
-main {
-  margin: 0 auto;
-  overflow-y: scroll;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 900px;
-}
-
-main::-webkit-scrollbar {
-  display: none;
-}
-
-main div {
-  margin: 16px;
-  background: rgb(75, 144, 209);
-  color: rgb(255, 255, 255);
-  padding: 12px;
-  flex: 1 1 200px;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-main div:hover {
-  cursor: pointer;
-}
-
-
-
-.waves {
-  background: url(./img/wave.png) no-repeat bottom center;
-  position: fixed;
-  bottom: -50px;
-  height: 200px;
-  width: 100%;
-}
-
-@media (max-width: 800px) {
-
-
-  main div {
-    margin: 20px;
-    padding: 12px;
-    flex: 2 2 250px;
-    text-align: center;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 600px) {
-  main {
-    max-width: 500px;
-    display: block;
-  }
-
-  main div {
-    margin: 20px auto;
-    padding: 12px;
-    text-align: center;
-    font-size: 1.1rem;
-    max-width: 350px;
-  }
+  transition: .2s linear;
 }
